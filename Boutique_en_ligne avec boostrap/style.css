@@ -1,0 +1,44 @@
+/* ===================== STYLES PERSO POUR LA BOUTIQUE BOOTSTRAP ===================== */
+
+/* Section héros */
+.hero {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 560px;
+}
+
+/* Cartes produits */
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(15, 23, 42, 0.12);
+}
+
+/* Footer */
+.footer-custom {
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+.footer-custom a {
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+.footer-custom a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}

@@ -1,0 +1,352 @@
+/* ==================== STYLES GLOBAUX ==================== */
+
+/* Définition de variables CSS pour les couleurs principales */
+:root {
+  --color-primary: #2563eb; /* Bleu principal */
+  --color-primary-dark: #1d4ed8; /* Bleu un peu plus foncé */
+  --color-bg: #f5f5f5; /* Fond global léger */
+  --color-text: #111827; /* Texte principal */
+  --color-muted: #6b7280; /* Texte secondaire */
+  --color-white: #ffffff;
+}
+
+/* Reset très léger + typographie globale */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+}
+
+/* Conteneur centré réutilisable */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Liens de base */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==================== HEADER & NAVIGATION ==================== */
+
+.site-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky; /* Header collé en haut au scroll */
+  top: 0;
+  z-index: 100;
+}
+
+/* Alignement du contenu du header */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+/* Logo / nom du site */
+.logo a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+/* Navigation desktop */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.main-nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Bouton menu burger (caché sur desktop) */
+.nav-toggle {
+  display: none; /* affiché seulement sur mobile via media query */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text);
+  margin: 4px 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* ==================== SECTION HÉROS ==================== */
+
+.hero-section {
+  background: linear-gradient(
+    to right,
+    #eef2ff,
+    #e0f2fe
+  ); /* Dégradé léger bleu/violet */
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 0.5rem auto 1.5rem;
+  color: var(--color-muted);
+}
+
+/* Bouton principal */
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* ==================== SECTION PRODUITS ==================== */
+
+.products-section {
+  padding: 3rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: var(--color-muted);
+}
+
+/* Grille des produits */
+.products-grid {
+  display: grid;
+  gap: 1.5rem;
+  /* Par défaut (mobile) : 1 colonne */
+  grid-template-columns: 1fr;
+}
+
+/* Carte produit */
+.product-card {
+  background-color: var(--color-white);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.product-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+/* Contenu de la carte */
+.product-info {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.product-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.product-info p {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+}
+
+/* Bouton secondaire (acheter) */
+.btn-secondary {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  background-color: transparent;
+  border-radius: 999px;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+/* Effet au survol de la carte produit */
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* ==================== SECTIONS À PROPOS & CONTACT ==================== */
+
+.about-section,
+.contact-section {
+  padding: 2.5rem 0;
+  background-color: #f9fafb;
+}
+
+.about-section h2,
+.contact-section h2 {
+  margin-bottom: 0.75rem;
+}
+
+.about-section p,
+.contact-section p {
+  max-width: 700px;
+  color: var(--color-muted);
+}
+
+/* ==================== PIED DE PAGE ==================== */
+
+.site-footer {
+  background-color: #111827;
+  color: #e5e7eb;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: #9ca3af;
+}
+
+.footer-links a:hover {
+  color: var(--color-white);
+}
+
+/* ==================== RESPONSIVE DESIGN (MEDIA QUERIES) ==================== */
+
+/* Pour les écrans ≥ 640px (tablettes par ex.) */
+@media (min-width: 640px) {
+  .hero-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .products-grid {
+    /* 2 colonnes à partir de 640px */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Pour les écrans ≥ 1024px (ordinateurs portables / bureau) */
+@media (min-width: 1024px) {
+  .hero-section {
+    text-align: left;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .products-grid {
+    /* 4 colonnes sur grand écran */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* ==================== NAVIGATION RESPONSIVE (MOBILE) ==================== */
+
+/* En mobile : on affiche le burger et on cache la navigation horizontale */
+@media (max-width: 768px) {
+  .main-nav {
+    position: absolute;
+    top: 100%; /* juste sous le header */
+    right: 0;
+    left: 0;
+    background-color: var(--color-white);
+    border-bottom: 1px solid #e5e7eb;
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    padding: 0.75rem 1.5rem 1rem;
+  }
+
+  .nav-toggle {
+    display: block; /* On affiche le bouton burger */
+  }
+
+  /* Quand la classe .nav-open est présente sur le header : menu visible */
+  .site-header.nav-open .main-nav {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

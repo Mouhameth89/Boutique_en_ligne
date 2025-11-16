@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Rendre la page adaptative sur mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boutique en ligne - Accueil</title>
+
+    <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ==================== EN-TÊTE / HEADER ==================== -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Logo / Nom de la boutique -->
+        <div class="logo">
+          <a href="#hero">MyShop<span>Online</span></a>
+        </div>
+
+        <!-- Menu de navigation principal -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#products">Produits</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Bouton menu burger pour mobile -->
+        <button class="nav-toggle" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ==================== CONTENU PRINCIPAL ==================== -->
+    <main>
+      <!-- SECTION HÉROS -->
+      <section id="hero" class="hero-section">
+        <div class="container hero-content">
+          <h1>Bienvenue dans notre boutique en ligne</h1>
+          <p>
+            Découvrez une sélection de produits tendance, livrés directement
+            chez vous.
+          </p>
+          <a href="#products" class="btn-primary"> Voir les produits </a>
+        </div>
+      </section>
+
+      <!-- SECTION PRODUITS -->
+      <section id="products" class="products-section">
+        <div class="container">
+          <header class="section-header">
+            <h2>Nos produits phares</h2>
+            <p>Une sélection de nos meilleures ventes.</p>
+          </header>
+
+          <!-- Grille des produits (4 fiches minimum) -->
+          <div class="products-grid">
+            <!-- FICHE PRODUIT 1 -->
+            <article class="product-card">
+              <img src="/images/produit1.jpeg" alt="Produit 1" />
+              <div class="product-info">
+                <h3>Casque Bluetooth</h3>
+                <p>
+                  Son haute qualité, design confortable et batterie longue
+                  durée.
+                </p>
+                <button class="btn-secondary">Acheter maintenant</button>
+              </div>
+            </article>
+
+            <!-- FICHE PRODUIT 2 -->
+            <article class="product-card">
+              <img src="/images/produit2.jpeg" alt="Produit 2" />
+              <div class="product-info">
+                <h3>Montre connectée</h3>
+                <p>
+                  Suivi d’activité, notifications intelligentes et style
+                  élégant.
+                </p>
+                <button class="btn-secondary">Acheter maintenant</button>
+              </div>
+            </article>
+
+            <!-- FICHE PRODUIT 3 -->
+            <article class="product-card">
+              <img src="/images/produit3.jpeg" alt="Produit 3" />
+              <div class="product-info">
+                <h3>Enceinte portable</h3>
+                <p>
+                  Compacte, puissante, idéale pour vos soirées et déplacements.
+                </p>
+                <button class="btn-secondary">Acheter maintenant</button>
+              </div>
+            </article>
+
+            <!-- FICHE PRODUIT 4 -->
+            <article class="product-card">
+              <img src="/images/produit4.jpeg" alt="Produit 4" />
+              <div class="product-info">
+                <h3>Sac à dos urbain</h3>
+                <p>Résistant, pratique et adapté à votre vie quotidienne.</p>
+                <button class="btn-secondary">Acheter maintenant</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION À PROPOS (contenu d'exemple) -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <h2>À propos de notre boutique</h2>
+          <p>
+            Notre boutique en ligne propose une sélection soigneusement choisie
+            de produits de qualité, avec un service client à votre écoute.
+            (Texte d'espace réservé, à personnaliser.)
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION CONTACT (contenu d'exemple) -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>
+            Pour toute question, vous pouvez nous écrire à :
+            <a href="mailto:contact@myshoponline.fr">contact@myshoponline.fr</a>
+            (contenu d'exemple).
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================== PIED DE PAGE ==================== -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; <span id="year"></span> MyShopOnline. Tous droits réservés.
+        </p>
+        <p class="footer-links">
+          <a href="#">Mentions légales</a> ·
+          <a href="#">Conditions générales</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT EXTERNE ==================== -->
+    <script src="script.js"></script>
+  </body>
+</html>
